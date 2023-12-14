@@ -94,7 +94,7 @@ jobs:
       - name: Build vt
         working-directory: vt
         run: |
-          cmake --build builddir --target install
+          cmake --build builddir -j 12 --target install
 
       - name: Configure kokkos
         working-directory: kokkos
@@ -107,7 +107,7 @@ jobs:
       - name: Build kokkos
         working-directory: kokkos
         run: |
-          cmake --build builddir --target install
+          cmake --build builddir -j 12 --target install
 
       - name: Configure distBVH
         run: |
@@ -117,4 +117,4 @@ jobs:
 
       - name: Build distBVH
         run: |
-          cmake --build builddir --target install
+          cmake --build builddir -j 12 --target install
