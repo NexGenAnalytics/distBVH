@@ -87,14 +87,14 @@ jobs:
         run: |
           cmake -B builddir \
             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-            -DVT_BUILD_EXAMPLES=OFF \
-            -DVT_BUILD_TESTS=OFF \
+            -DVT_build_examples=OFF \
+            -Dvt_build_tests=OFF
             -Dvt_trace_enabled=ON
 
       - name: Build vt
         working-directory: vt
         run: |
-          cmake --build builddir -j 12 --target install
+          cmake --build builddir -j 14 --target install
 
       - name: Configure kokkos
         working-directory: kokkos
@@ -108,7 +108,7 @@ jobs:
       - name: Build kokkos
         working-directory: kokkos
         run: |
-          cmake --build builddir -j 12 --target install
+          cmake --build builddir -j 14 --target install
 
       - name: Configure distBVH
         run: |
@@ -118,4 +118,4 @@ jobs:
 
       - name: Build distBVH
         run: |
-          cmake --build builddir -j 12 --target install
+          cmake --build builddir -j 14 --target install
