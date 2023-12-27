@@ -41,3 +41,7 @@ jobs:
         run: |
           cmake --build builddir -j 14 --target install
 
+      - name: Run tests
+        run: |
+          ctest --test-dir builddir --output-on-failure
+          
