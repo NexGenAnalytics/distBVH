@@ -37,7 +37,8 @@ Locating DARMA/vt
 -----------------
 
 BVH is dependent on `DARMA/vt`_ for parallel asynchronous distributed tasking. Follow the instructions on the `DARMA/vt README`_ for
-building VT and install it to a desired directory.
+building VT and install it to a desired directory. Since BVH depends on `spdlog`_ for logging, it's best to configure both VT and
+spdlog to use external `fmt`_ (which all VT, spdlog and BVH use).
 
 .. _cmake-vt-dir:
 
@@ -57,6 +58,8 @@ Other variables, like ``CMAKE_PREFIX_PATH`` work as expected.
 
 .. _DARMA/VT: https://github.com/DARMA-tasking/vt
 .. _DARMA/vt README: https://github.com/DARMA-tasking/vt/blob/develop/README.md
+.. _spdlog: https://github.com/gabime/spdlog
+.. _fmt: https://github.com/fmtlib/fmt
 
 VT Insertable Collections
 ^^^^^^^^^^^^^^^^^^^^^^^^^
